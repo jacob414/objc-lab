@@ -26,7 +26,7 @@
 }
 
 -(void) show {
-  NSLog(message);
+  NSLog(@"%@", message);
 }
 
 @end
