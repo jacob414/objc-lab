@@ -4,7 +4,7 @@ if [ "$1" == "" ]; then
     exit 1
 fi
 
-/usr/bin/gcc-4.2 -framework Foundation $1.m -o $1.app
+gcc -framework Foundation -ObjC $1.m -o $1.app
 if [  "$?" == "0" ]; then
     ./$1.app
 fi
