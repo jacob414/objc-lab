@@ -1,0 +1,6 @@
+#!/bin/sh
+(
+    gcc -ObjC -c $1.m -o $1.o &&
+    gcc -shared -framework Foundation -soname,$1.so.1 -o $1.so $1.o &&
+    python test_$1.py
+)
