@@ -9,5 +9,8 @@ int main(int argc, char *argv[])
 
   puts(str);
 
+  NSString *other = qfmt(@"a str = %@, an int = %d", @"foo", 23);
+  puts(other);
+
   DRAIN;
 }
