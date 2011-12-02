@@ -14,5 +14,9 @@ int main(int argc, char *argv[])
     NSLog(@"%@", @"Isn't a file");
   }
 
+  NSURL *tel = [NSURL URLWithString:@"tel:+46708628545"];
+
+  NSLog(@"Phone number is %@", [tel resourceSpecifier]);
+
   [pool drain];
 }
