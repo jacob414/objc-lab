@@ -11,8 +11,13 @@
   return [self hasPrefix:@"text/"];
 }
 
+/**
+ * See http://www.w3.org/International/O-HTTP-charset
+ */
 -(NSString*)getEncoding {
- return nil;
+  return
+    [[[self componentsSeparatedByString:@"charset="]
+       objectAtIndex:1] lowercaseString];
 }
 @end
 
@@ -31,6 +36,5 @@ int main(int argc, char *argv[]) {
   my_chk(@"text/plain".textual, @"text/plain textual");
   my_chk([@"application/rtf; charset=UTF-8".encoding isEqual:@"utf-8"],
          @"RTF with encoding");
-
   return 0;
 }
